@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#007bff">
+    <meta name="description" content="login">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Login</title>
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body id="bodyHome">
+    <noscript>
+        <p>Please enable JavaScript on your browser</p>
+    </noscript>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function () {
+                    console.log('service worker registered');
+                })
+                .catch(function (err) {
+                    console.warn(err);
+                });
+        }
+    </script>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Login</h5>
+                        <form class="form-signin" id="frmLogin">
+                            <div class="form-label-group">
+                                <input id="inputEmail" name="login" class="form-control" placeholder="Email" required autofocus>
+                                <label for="inputEmail">Login</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" id="inputPassword" name="senha" class="form-control" placeholder="Senha" required>
+                                <label for="inputPassword">Senha</label>
+                            </div>
+
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Lembrar senha</label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
+                            <hr class="my-4">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal hide" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-body">
+            <div class="text-center">
+                <div class="spinner-border text-light" role="status" style="width: 3rem; height: 3rem;">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
