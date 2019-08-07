@@ -15,15 +15,20 @@ $('#frmLogin').submit((e) => {
             Password: $('#inputPassword').val(),
             CdMacDispositivo: 'testeMaycon'
         }),
-        success: (response) => document.cookie = "access_token=" + response + "",
-        complete: () => {
-            location.href= "/home.html"
-            $('#pleaseWaitDialog').modal('hide')
+        success: (response) => {
+            debugger
+            document.cookie = "access_token=" + response + "";
+            location.href = "/home.html";
+            $('#pleaseWaitDialog').modal('hide');
         },
-        error: (response) => console.log(response)
+        error: (response) => {
+            debugger
+            $('.toast-body').text(response);
+            $('.toast').toast({ delay: 4000 }).toast('show');
+        }
     });
 });
 
 function ShowLoader() {
-    $('#pleaseWaitDialog').modal();
+    $('#pleaseWaitDialog').modal({ backdrop: 'static', keyboard: false });
 }

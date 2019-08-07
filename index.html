@@ -14,7 +14,7 @@
     <link rel="manifest" href="manifest.json">
 </head>
 
-<body id="bodyHome">
+<body>
     <noscript>
         <p>Please enable JavaScript on your browser</p>
     </noscript>
@@ -34,40 +34,60 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Login</h5>
-                        <form class="form-signin" id="frmLogin">
-                            <div class="form-label-group">
-                                <input id="inputEmail" name="login" class="form-control" placeholder="Email" required autofocus>
-                                <label for="inputEmail">Login</label>
+                        <center>
+                            <img src="public/images/vicunha-logo-horizontal.png" alt="logo_vicunha" width="50%" />
+                        </center>
+                        <h5 class="card-title" style="font-weight: bold; text-align: center;">VIC<span
+                                style="opacity: 0.4;">ALGODÃO</span>
+                        </h5>
+                        <form id="frmLogin" style="padding-top: 8%;border-top: 1px solid #1d1b1b;">
+                            <strong style="display: flex;justify-content: center;font-size: 1.4em;">Entrar</strong>
+                            <div>
+                                <label>Usuário</label>
+                                <input id="inputEmail" class="form-control" placeholder="Email" required>
                             </div>
-
-                            <div class="form-label-group">
-                                <input type="password" id="inputPassword" name="senha" class="form-control" placeholder="Senha" required>
-                                <label for="inputPassword">Senha</label>
+                            <div style="margin-top: 5%">
+                                <label>Senha</label>
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Senha"
+                                    required>
                             </div>
-
-                            <div class="custom-control custom-checkbox mb-3">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">Lembrar senha</label>
-                            </div>
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
-                            <hr class="my-4">
+                            <label style="margin-top: 4%">Esqueci minha senha</label>
+                            <button class="btn btn-lg btn-primary btn-block buttonLogin" type="submit"
+                                style="margin-top: 4%;border: none;background-color: #000000;">Entrar</button>
+                            <button class="btn btn-lg btn-block buttonLogin"
+                                style="border: 1.6px solid black;font-weight: bold;" type="submit">Autenticar</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal hide" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
-        <div class="modal-body">
-            <div class="text-center">
-                <div class="spinner-border text-light" role="status" style="width: 3rem; height: 3rem;">
-                    <span class="sr-only">Loading...</span>
+    <div class="modal fade" id="pleaseWaitDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center" style="display: flex;flex-direction: column;">
+                        <div class="spinner-border" role="status" style="width: 3rem; height: 3rem;margin: auto;">
+                        </div>
+                        <span>Logando...</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="scripts/jquery.js"></script>
+    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center"
+        style="min-height: 200px;">
+
+        <!-- Then put toasts within -->
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+            </div>
+        </div>
+    </div>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/popper.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/index.js"></script>
 </body>
 
