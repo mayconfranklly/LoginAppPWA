@@ -18,45 +18,40 @@
     <noscript>
         <p>Please enable JavaScript on your browser</p>
     </noscript>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(function () {
-                    console.log('service worker registered');
-                })
-                .catch(function (err) {
-                    console.warn(err);
-                });
-        }
-    </script>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5">
-                    <div class="card-body">
-                        <center>
-                            <img src="public/images/vicunha-logo-horizontal.png" alt="logo_vicunha" width="50%" />
-                        </center>
-                        <h5 class="card-title" style="font-weight: bold; text-align: center;">VIC<span
-                                style="opacity: 0.4;">ALGODÃO</span>
-                        </h5>
-                        <form id="frmLogin" style="padding-top: 8%;border-top: 1px solid #1d1b1b;">
-                            <strong style="display: flex;justify-content: center;font-size: 1.4em;">Entrar</strong>
-                            <div>
-                                <label>Usuário</label>
-                                <input id="inputEmail" class="form-control" placeholder="Email" required>
-                            </div>
-                            <div style="margin-top: 5%">
-                                <label>Senha</label>
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Senha"
-                                    required>
-                            </div>
-                            <label style="margin-top: 4%">Esqueci minha senha</label>
-                            <button class="btn btn-lg btn-primary btn-block buttonLogin" type="submit"
-                                style="margin-top: 4%;border: none;background-color: #000000;">Entrar</button>
-                            <button class="btn btn-lg btn-block buttonLogin"
-                                style="border: 1.6px solid black;font-weight: bold;" type="submit">Autenticar</button>
-                        </form>
+    <div class="header d-flex flex-row-reverse">
+        <button id="butInstall" aria-label="Install" hidden></button>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <center>
+                                <img src="public/images/vicunha-logo-horizontal.png" alt="logo_vicunha" width="50%" />
+                            </center>
+                            <h5 class="card-title" style="font-weight: bold; text-align: center;">VIC<span
+                                    style="opacity: 0.4;">ALGODÃO</span>
+                            </h5>
+                            <form id="frmLogin" style="padding-top: 8%;border-top: 1px solid #1d1b1b;">
+                                <strong style="display: flex;justify-content: center;font-size: 1.4em;">Entrar</strong>
+                                <div>
+                                    <label>Usuário</label>
+                                    <input id="inputEmail" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div style="margin-top: 5%">
+                                    <label>Senha</label>
+                                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha"
+                                        required>
+                                </div>
+                                <label style="margin-top: 4%">Esqueci minha senha</label>
+                                <button class="btn btn-lg btn-primary btn-block buttonLogin" type="submit"
+                                    style="margin-top: 4%;border: none;background-color: #000000;">Entrar</button>
+                                <button class="btn btn-lg btn-block buttonLogin"
+                                    style="border: 1.6px solid black;font-weight: bold;"
+                                    type="submit">Autenticar</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,6 +84,18 @@
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/index.js"></script>
+    <script src="scripts/install.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function () {
+                    console.log('service worker registered');
+                })
+                .catch(function (err) {
+                    console.warn(err);
+                });
+        }
+    </script>
 </body>
 
 </html>

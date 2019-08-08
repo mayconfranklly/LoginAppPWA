@@ -16,13 +16,11 @@ $('#frmLogin').submit((e) => {
             CdMacDispositivo: 'testeMaycon'
         }),
         success: (response) => {
-            debugger
             document.cookie = "access_token=" + response + "";
             location.href = "/home.html";
             $('#pleaseWaitDialog').modal('hide');
         },
         error: (response) => {
-            debugger
             $('.toast-body').text(response);
             $('.toast').toast({ delay: 4000 }).toast('show');
         }
