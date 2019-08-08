@@ -18,11 +18,12 @@ $('#frmLogin').submit((e) => {
         success: (response) => {
             document.cookie = "access_token=" + response + "";
             location.href = "/home.html";
-            $('#pleaseWaitDialog').modal('hide');
+            setTimeout(() => $('#pleaseWaitDialog').modal('hide'), 0)
         },
         error: (response) => {
-            $('.toast-body').text(response);
+            $('.toast-body').text(response.statusText);
             $('.toast').toast({ delay: 4000 }).toast('show');
+            setTimeout(() => $('#pleaseWaitDialog').modal('hide'), 0)
         }
     });
 });

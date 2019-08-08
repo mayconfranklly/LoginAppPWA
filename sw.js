@@ -1,18 +1,20 @@
-var CACHE_NAME = 'static-v1';
+var CACHE_NAME = 'static-v2';
 
-self.addEventListener('install', function (event) {
+var FILE_LIST = [
+  '/index.html',
+  '/home.html',
+  '/css/index.css',
+  '/scripts/index.js',
+  '/scripts/jquery.js'
+]
+
+self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function (cache) {
-      return cache.addAll([
-        '/index.html',
-        '/home.html',
-        '/css/index.css',
-        '/scripts/index.js',
-        '/scripts/jquery.js'
-      ]);
-    })
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(FILE_LIST))
+      .catch(error => console.error('💩', error))
   )
-});
+})
 
 self.addEventListener('activate', function activator(event) {
   event.waitUntil(
